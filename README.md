@@ -1,4 +1,4 @@
-# 前提
+# 学习前提
 ### 计算机常见操
 - 打开关闭文件
 - 安装软件
@@ -29,19 +29,20 @@
 -  sublime安装
 [官网下载](http://www.sublimetext.com/)
 
+
+### 任务
+- 查看文件扩展名
+- 安装Chrome浏览器
+- 安装sublime编辑器
+
+# 预热
+
 ### WEB运行原理介绍 
 
 [MDN参考](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/How_the_Web_works)
 
 前端就是编写各种个样精美的网页(PC和移动),一个网页由许多许多文件组成
 
-### 任务
-- 查看文件扩展名
-- 安装Chrome浏览器
-- 安装sublime编辑器
-- 任意请求一个你喜欢的网站,在浏览器的控制台中的网络中观察都返回了哪些文件
-
-# 预热
 ### 新建扩展名为`.html`的文件,编写如下代码并在浏览器中运行
 ```html
 <!DOCTYPE html>
@@ -66,6 +67,7 @@
 <img src="./images/js.png" height="100px" width="100px" >
 
 ### 任务
+- 任意请求一个你喜欢的网站,在浏览器的控制台中的网络中观察都返回了哪些文件
 - 编写以上预热代码,试着修改颜色和字体大小,在浏览器中运行并观察结果
 
 # HTML
