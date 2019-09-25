@@ -324,9 +324,9 @@
 
 ### 文字文本
 - 文字的颜色`color`
-    - 英文单词,英文单词表示颜色主要用来调试,实际开发中用的不多
-    
-    17 种标准色是 aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, orange, purple, red, silver, teal, white, yellow
+    - 英文单词
+        - 英文单词表示颜色主要用来调试,实际开发中用的不多
+        - 17 种标准色是 aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, orange, purple, red, silver, teal, white, yellow
     
     - rgb
         - rgb就是r(red)红 g(green)绿 b(blue)蓝的缩写，也就是咱们通常说的三原色。可以通过设置三原色的值来确定颜色。
@@ -356,6 +356,9 @@
         - px(像素)
         - %(父元素字体的百分比)
         - em(一个em相对于一个父元素字体的大小)
+
+### 任务
+-  让一段文字在浏览器中水平居中,用十六进制的方式为其设置灰色,并将文字的大小改为24像素
 
 ### 盒模型
 
