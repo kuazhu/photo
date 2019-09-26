@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>036-过渡.html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            margin-top: 10px;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            transition-property: width;
+            transition-duration: 1s;
+        }
+        .box1:hover{
+            width: 200px;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            transition: width 1s linear 1s;
+        }
+        .box2:hover{
+            width: 200px;
+        }
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            transition: background-color 1s;
+        }
+        .box3:hover{
+            background-color: red;
+        }
+        .box4{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            transition: background-color 1s,width 1s;
+        }
+        .box4:hover{
+            background-color: red;
+            width: 200px;
+        }
+        .box5{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            transition: all 1s;
+        }
+        .box5:hover{
+            background-color: red;
+            width: 200px;
+        }                                  
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+</body>
+</html>

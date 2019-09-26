@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>032-固定定位.html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            position: fixed;
+            top:100px;
+            /*left:200px;*/
+            /*bottom:100px;*/
+            background-color: red;
+            z-index: 3;
+        }
+        .box2{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+            position: fixed;
+            top:100px;
+            background-color: tomato;
+            z-index: 2;
+        }
+        body{
+            height: 3000px;
+        }        
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+</body>
+</html>
