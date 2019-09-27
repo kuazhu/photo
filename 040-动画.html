@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>040-动画.html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            /*
+            animation-name: sport;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            */
+           animation: sport 1s linear 0s infinite normal;
+        }
+        @keyframes sport{
+            from{
+                width: 100px;
+            }
+            to{
+                width: 200px;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

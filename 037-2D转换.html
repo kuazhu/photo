@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>037-2D转换.html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            perspective: 500px;
+        }
+        .wrap div{
+            width: 50px;
+            height: 50px;
+            background-color: tomato;
+            margin: 50px 0 0 100px;
+        }
+        .box2{
+            transform: rotateX(15deg);
+        }
+        .box3{
+            transform: rotateY(15deg);
+        }
+        .box4{
+            transform: translate(-30px,-30px);
+        }
+        .box5{
+            transform: translateX(-30px);
+        }
+        .box6{
+            /*transform: translateY(-50px);*/
+            transform: translateY(-100%);
+        }
+        .box7{
+            transform: scale(1.5,0.5);
+        }
+        .box8{
+            transform: scaleX(0.5);
+        }
+        .box9{
+            transform: scaleY(1.5);
+        }
+        .box10{
+            transform: scale(2);
+        }                           
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box1">基本</div>
+        <div class="box2">旋转x</div>
+        <div class="box3">旋转y</div>
+        <div class="box4">平移</div>
+        <div class="box5">平移x</div>
+        <div class="box6">平移y</div>
+        <div class="box7">缩放</div>
+        <div class="box8">缩放x</div>
+        <div class="box9">缩放y</div>
+        <div class="box10">缩放</div>
+    </div>
+</body>
+</html>

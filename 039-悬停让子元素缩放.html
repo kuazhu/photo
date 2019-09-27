@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>039-悬停让子元素缩放.html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            background-color: #ccc;
+        }
+        .son{
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            background-color: pink;
+        }
+        .father:hover>.son{
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+</html>

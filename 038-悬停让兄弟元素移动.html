@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>038-悬停让兄弟元素移动.html</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 50px;
+            background-color: tomato;
+            margin: 50px 0 0 100px;
+        }
+        .box1:hover + .box2{
+            transform: translateY(10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+</body>
+</html>

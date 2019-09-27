@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>041-单选触发相邻兄弟元素动画.html</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            opacity: 0;
+        }
+        input:checked+div{
+            /*background-color: blue;*/
+            animation: sport 1s;
+        }
+        @keyframes sport{
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <input type="radio" name="ctr">
+    <div></div>
+    <input type="radio" name="ctr">
+    <div></div>
+</body>
+</html>
