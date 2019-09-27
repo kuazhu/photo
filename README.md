@@ -569,3 +569,255 @@
 - overflow: hidden,内容会被修剪，并且其余内容是不可见的
 - background-color,设置背景色
 - border-radius,设置边框圆角
+
+# 相册项目
+1. 准备素材和搭建基本页面
+
+2. 分析和实现顶部导航的结构
+    2.1 所有页面包裹在一个容器中
+    2.2 为了实现选中互斥的效果需要使用radio
+    2.3 为了给导航添加按钮的样式,给每一个radio添加一个相邻兄弟元素div,以便选择单选按钮时修改div的样式
+    ```html
+    <div class="wrap">
+        <input type="radio" name="ctl" id="ctr1">
+        <div class="btn">致青春</div>
+        <input type="radio" name="ctl" id="ctr2">
+        <div class="btn">辣眼睛</div>
+        <input type="radio" name="ctl" id="ctr3">
+        <div class="btn">臭美</div>
+        <input type="radio" name="ctl" id="ctr4">
+        <div class="btn">手拉手</div>
+        <input type="radio" name="ctl" id="ctr5">
+        <div class="btn">诗和远方</div>
+    </div>
+    ```
+3. 实现顶部导航的样式
+    3.1 顶部固定宽度平分
+    ```css
+    .wrap>input,
+    .wrap>.btn{
+        position: fixed;
+        top:0;
+        width: 20%;
+        height: 34px;
+    }
+    ```
+    3.2 分列显示
+    ```css
+    #ctr1,#ctr1+.btn{
+        left:0%;
+    }
+    #ctr2,#ctr2+.btn{
+        left:20%;
+    }
+    #ctr3,#ctr3+.btn{
+        left:40%;
+    }
+    #ctr4,#ctr4+.btn{
+        left:60%;
+    }
+    #ctr5,#ctr5+.btn{
+        left:80%;
+    }
+    ```
+    3.3 选中按钮并隐藏单选按钮
+    ```css
+    .wrap>input{
+        z-index: 999;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .wrap>.btn{
+        z-index: 111;
+    }
+    ```    
+    3.4 设置自定义按钮样式
+    ```css
+    .wrap>.btn{
+        text-align: center;
+        font-size: 24px;
+        color: #fff;
+        background-color: #2f2f2f;
+    }
+    ```
+    3.5 导航hover时改变背景色
+    ```css
+    .wrap>input:hover + .btn{
+        background-color: #555;
+    }     
+    ```
+    3.6 导航选中时改变字体颜色
+    ```css
+    .wrap>input:checked + .btn{
+        color: #ff20cc;
+    }                
+    ```
+4. 分析和实现内容区域的结构
+    ```html
+    <div class="content">
+        <div class="page" id="page1">page1</div>
+        <div class="page" id="page2">page2</div>
+        <div class="page" id="page3">page3</div>
+        <div class="page" id="page4">page4</div>
+        <div class="page" id="page5">page5</div>
+    </div>
+    ```
+5. 内容区域的样式
+    5.1 内容区域完整显示
+    ```css
+        .wrap>.content{
+            margin-top: 34px;
+        }
+    ```
+    5.2 内容区域中每一个页面占满整个屏幕的高度
+    ```css
+        html,
+        body,
+        .wrap,
+        .wrap>.content,
+        .wrap>.content>.page{
+            height: 100%;
+        }
+    ```
+    5.3 只显示一个页面
+    ```css
+        .wrap{
+            overflow: hidden;
+        }
+    ```
+    5.4 选择导航按钮时切换到对应的页面
+    ```css
+        #ctr1:checked ~ .content{
+            transform: translateY(0);
+        }
+        #ctr2:checked ~ .content{
+            transform: translateY(-100%);
+        }
+        #ctr3:checked ~ .content{
+            transform: translateY(-200%);
+        }
+        #ctr4:checked ~ .content{
+            transform: translateY(-300%);
+        }
+        #ctr5:checked ~ .content{
+            transform: translateY(-400%);
+        }             
+    ```
+6. 图片显示页面的四列结构
+    ```html
+    <div class="page" id="page1">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <div class="col">4</div>
+    </div>
+    ```
+7. 图片显示页面的四列结构布局样式
+    ```css
+    .wrap>.content>.page{
+        padding: 1rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .col{
+        width: 24%;
+    }
+    ```
+8. 图片的结构
+    ```html
+    <div class="page" id="page1">
+        <div class="col">
+            <div class="image w">
+                <img src="img/w01.jpg" alt="">
+            </div>
+            <div class="image h mt">
+                <img src="img/h01.jpg" alt="">
+            </div>                                      
+        </div>
+        <div class="col">
+            <div class="image h">
+                <img src="img/h02.jpg" alt="">
+            </div>
+            <div class="image w mt">
+                <img src="img/w02.jpg" alt="">
+            </div>                                          
+        </div>
+        <div class="col">
+            <div class="image w">
+                <img src="img/w03.jpg" alt="">
+            </div>
+            <div class="image h mt">
+                <img src="img/h03.jpg" alt="">
+            </div>                                      
+        </div>
+        <div class="col">
+            <div class="image h">
+                <img src="img/h04.jpg" alt="">
+            </div>
+            <div class="image w mt">
+                <img src="img/w04.jpg" alt="">
+            </div>                                  
+        </div>          
+    </div>
+    ```
+9. 图片的样式
+    ```css
+    .image{
+        overflow: hidden;
+        width: 100%;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .image.w{
+        height: 30%;
+    }
+    .image.h{
+        height: 65%;
+    }
+    .mt{
+        margin-top: 2%;
+    }
+    .image>img{
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+    }
+    ```
+10. 添加特效
+    10.1 鼠标hover缩放图片
+        ```css
+        .image img{
+            transition: transform 1s;
+        }
+        .image:hover img{
+            transform: scale(1.1,1.1);
+        }
+        ```
+    10.2 页面切换时过渡效果
+        ```css
+        .wrap>.content{
+            transition: transform 0.5s;
+        }
+        ```
+    10.3 页面切换时淡入淡出效果
+    ```css
+        @keyframes sport{
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        #ctr1:checked ~ .content #page1,
+        #ctr2:checked ~ .content #page2,
+        #ctr3:checked ~ .content #page3,
+        #ctr4:checked ~ .content #page4,
+        #ctr5:checked ~ .content #page5{
+            animation: sport 1s;
+        }
+    ```       
+
+11. 代码优化
