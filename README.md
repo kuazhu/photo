@@ -574,9 +574,13 @@
 1. 准备素材和搭建基本页面
 
 2. 分析和实现顶部导航的结构
+    
     2.1 所有页面包裹在一个容器中
+    
     2.2 为了实现选中互斥的效果需要使用radio
+    
     2.3 为了给导航添加按钮的样式,给每一个radio添加一个相邻兄弟元素div,以便选择单选按钮时修改div的样式
+    
     ```html
     <div class="wrap">
         <input type="radio" name="ctl" id="ctr1">
@@ -592,6 +596,7 @@
     </div>
     ```
 3. 实现顶部导航的样式
+    
     3.1 顶部固定宽度平分
     ```css
     .wrap>input,
@@ -602,6 +607,7 @@
         height: 34px;
     }
     ```
+    
     3.2 分列显示
     ```css
     #ctr1,#ctr1+.btn{
@@ -620,6 +626,7 @@
         left:80%;
     }
     ```
+    
     3.3 选中按钮并隐藏单选按钮
     ```css
     .wrap>input{
@@ -631,6 +638,7 @@
         z-index: 111;
     }
     ```    
+    
     3.4 设置自定义按钮样式
     ```css
     .wrap>.btn{
@@ -640,12 +648,14 @@
         background-color: #2f2f2f;
     }
     ```
+    
     3.5 导航hover时改变背景色
     ```css
     .wrap>input:hover + .btn{
         background-color: #555;
     }     
     ```
+    
     3.6 导航选中时改变字体颜色
     ```css
     .wrap>input:checked + .btn{
@@ -663,12 +673,14 @@
     </div>
     ```
 5. 内容区域的样式
+    
     5.1 内容区域完整显示
     ```css
         .wrap>.content{
             margin-top: 34px;
         }
     ```
+    
     5.2 内容区域中每一个页面占满整个屏幕的高度
     ```css
         html,
@@ -679,12 +691,14 @@
             height: 100%;
         }
     ```
+    
     5.3 只显示一个页面
     ```css
         .wrap{
             overflow: hidden;
         }
     ```
+    
     5.4 选择导航按钮时切换到对应的页面
     ```css
         #ctr1:checked ~ .content{
@@ -703,6 +717,7 @@
             transform: translateY(-400%);
         }             
     ```
+
 6. 图片显示页面的四列结构
     ```html
     <div class="page" id="page1">
@@ -786,21 +801,24 @@
     }
     ```
 10. 添加特效
+    
     10.1 鼠标hover缩放图片
-        ```css
-        .image img{
-            transition: transform 1s;
-        }
-        .image:hover img{
-            transform: scale(1.1,1.1);
-        }
-        ```
+    ```css
+    .image img{
+        transition: transform 1s;
+    }
+    .image:hover img{
+        transform: scale(1.1,1.1);
+    }
+    ```
+    
     10.2 页面切换时过渡效果
-        ```css
-        .wrap>.content{
-            transition: transform 0.5s;
-        }
-        ```
+    ```css
+    .wrap>.content{
+        transition: transform 0.5s;
+    }
+    ```
+    
     10.3 页面切换时淡入淡出效果
     ```css
         @keyframes sport{
